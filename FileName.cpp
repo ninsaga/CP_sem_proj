@@ -20,7 +20,7 @@ void displayStory() {
     cout << "As you stand before Amren in the final battle, the fate of Eldoria hangs in the balance...\n";
     cout << "Will you emerge victorious, or will Eldoria fall into the clutches of darkness?\n\n";
 
-    cout << "As the fruit of Eros shatters into a shower of sparkles, you awaken in your own world.\n";
+    cout << "As the fruit of Eros erupts into a shower of ashes, you awaken in your own world.\n";
     cout << "The echoes of your journey in Eldoria linger, a tale of courage, magic, and triumph.\n\n";
 }
 
