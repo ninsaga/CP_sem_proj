@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <limits>
 
 using namespace std;
 
@@ -38,6 +37,7 @@ void handleLowHealthScenario(int& playerHealth, int& winRate);
 
 int main() {
     // Player details
+    system("color 0d");
     string playerName;
     int playerHealth = 100;
     int winRate = 0;
@@ -73,7 +73,6 @@ int main() {
     }
     else {
         printCentered("Unfortunately, Amren proved too powerful. Eldoria falls...");
-        main();
     }
 
     // Conclusion
@@ -108,7 +107,7 @@ char getDecision() {
     while (!validInput) {
         cin >> decision;
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
 
         // Check for desired inputs
         if (decision == 'i' || decision == 'a' || decision == 's' || decision == 'f' ||
@@ -122,7 +121,7 @@ char getDecision() {
             string trapAnswer;
             getline(cin, trapAnswer);
 
-            if (trapAnswer == "powerful wand" || trapAnswer == "powerful") {
+            if (trapAnswer == "powerful wand" || trapAnswer == "powerful" || trapAnswer == "wand") {
                 cout << "Correct! But you're still trapped." << endl;
             }
             else {
@@ -132,7 +131,7 @@ char getDecision() {
             cout << "What is the primary goal of your journey? ";
             getline(cin, trapAnswer);
 
-            if (trapAnswer == "save Eldoria" || trapAnswer == "save" || trapAnswer == "Eldoria") {
+            if (trapAnswer == "save Eldoria" || trapAnswer == "save" || trapAnswer == "Eldoria" || trapAnswer == "eldoria") {
                 cout << "Correct! However, you remain trapped." << endl;
             }
             else {
@@ -146,33 +145,52 @@ char getDecision() {
 
 // Encounters with characters
 void pixiesEncounter(int& playerHealth, int& winRate) {
-    printCentered("You enter the misty forest and encounter Pixies (i).");
+    printCentered("You enter the misty forest with Elara (i).");
+    printCentered("Elara: The people of Eldoria have avoided this forest for years.");
+    printCentered("Eversince Amren came into control, her pesky little pixies have");
+    printCentered("been traumatising the civilians.");
+    printCentered("Be careful while going in there, we can't let our guard down!");
+    printCentered("...");
+    printCentered("squeak squeak");
+    printCentered("Elara:oh no! I didn't think we'd actually run into these THINGS");
+    printCentered("Stay on your guard!");
+
+
     printCentered("What will you do? (i)gnore or (a)ttack: ");
 
     char decision = getDecision();
 
     if (decision == 'i') {
-        printCentered("You avoid the Pixies and proceed.");
+        printCentered("You avoided the Pixies and proceed.");
     }
     else if (decision == 'a') {
-        printCentered("You defeat the Pixies, gaining experience.");
+        printCentered("You defeated the Pixies, gaining experience.");
         playerHealth -= 20;
         winRate += 20;
     }
 }
 
 void elvesEncounter(int& playerHealth, int& winRate) {
+    printCentered("Elara: Phew!! that was close.");
+    printCentered("Never for a second did i doubt you!");
+    printCentered("You are the Chosen one afterall.");
+    printCentered("Now we're gonna have to be a bit sneaky.");
+    printCentered("There's a bridge coming up.");
+    printCentered("guarded by Amren's elves.");
+    printCentered("There's no way they'll let us by that easily.");
+    printCentered("...");
     printCentered("You reach an abandoned bridge guarded by Elves (ii).");
+    printCentered("You ready?");
     printCentered("Will you (s)neak or (f)ight: ");
 
     char decision;
     cin >> decision;
 
     if (decision == 's') {
-        printCentered("You manage to sneak past the Elves.");
+        printCentered("You managed to sneak past the Elves.");
     }
     else if (decision == 'f') {
-        printCentered("You engage in a battle with the Elves!");
+        printCentered("You engaged in a battle with the Elves!");
 
         // Unique fight style
         printCentered("The Elves seem overpowered. What will you do?");
@@ -180,17 +198,17 @@ void elvesEncounter(int& playerHealth, int& winRate) {
         cin >> decision;
 
         if (decision == 'a') {
-            printCentered("You launch a powerful attack!");
+            printCentered("You launched a powerful attack!");
             playerHealth -= 20;
             winRate += 20;
         }
         else if (decision == 'b') {
-            printCentered("You try to block the Elves' attack!");
+            printCentered("You tried to block the Elves' attack!");
             playerHealth -= 10;
             winRate += 10;
         }
         else if (decision == 'c') {
-            printCentered("You consider conceding the fight...");
+            printCentered("You considered conceding the fight...");
             printCentered("Elf leader: 'Will you take my attack?' (yes/no): ");
             string response;
             cin >> response;
@@ -199,6 +217,7 @@ void elvesEncounter(int& playerHealth, int& winRate) {
                 printCentered("Elf leader: 'You've fallen into my trap!'");
                 playerHealth = 0; // Lose condition
                 winRate = 0;
+
             }
             else {
                 printCentered("Elf leader: 'Then proceed, wise choice.'");
@@ -209,7 +228,17 @@ void elvesEncounter(int& playerHealth, int& winRate) {
 }
 
 void bibblesEncounter(int& playerHealth, int& winRate) {
-    printCentered("You enter a tunnel and are attacked by Bibbles (iii).");
+    printCentered("Elara: This is the worst!!!");
+    printCentered("but atleast we're not dead yet, so that's a good thing.");
+    printCentered("we're gonna be approaching a tunnel soon,");
+    printCentered("I've heard its filled with Bibbles.");
+    printCentered("I've never seen one before, ");
+    printCentered("but i sure have heard some nasty things about them.");
+    printCentered("we've got to stay sharp!!");
+    cout << endl;
+    cout << endl;
+    printCentered("...");
+    printCentered("*You enter a tunnel and are attacked by Bibbles* (iii).");
     printCentered("Do you (r)un or (c)hallenge: ");
 
     char decision = getDecision();
@@ -225,8 +254,19 @@ void bibblesEncounter(int& playerHealth, int& winRate) {
 }
 
 void gollumsEncounter(int& playerHealth, int& winRate) {
+    printCentered("Elara: we're almost there!!!");
+    printCentered("Amren's Castle is just up ahead.");
+    printCentered("It's heavily guarded by her Gollums.");
+    printCentered("Those creatures are incredibly powerful.");
+    printCentered("Don't fall into their traps.");
+    printCentered("Focus on your end goal.");
+    cout << endl;
+    cout << endl;
+    printCentered("...");
+    printCentered("Elara: I CAN SEE THEMMM!!!!!");
+    cout << endl;
     printCentered("You face Gollums guarding Amren's castle.");
-    printCentered("Gollum asks: 'Why do you wish to fight me? (yes/no):' ");
+    printCentered("Gollum asks: 'Do you wish to fight me? (yes/no):' ");
 
     string response;
     getline(cin, response);
@@ -297,7 +337,7 @@ void handleLowHealthScenario(int& playerHealth, int& winRate) {
     // Tricky question with a tricky hint
     string answer;
     cout << "Answer this: What is the one thing Amren fears the most? ";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.ignore();
     getline(cin, answer);
 
     if (answer == "the truth") {
