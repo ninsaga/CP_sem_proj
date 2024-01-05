@@ -146,14 +146,24 @@ char getDecision() {
 // Encounters with characters
 void pixiesEncounter(int& playerHealth, int& winRate) {
     printCentered("You enter the misty forest with Elara (i).");
+    printCentered("press enter to continue.");
+    cin.ignore();
     printCentered("Elara: The people of Eldoria have avoided this forest for years.");
+    cin.ignore();
     printCentered("Eversince Amren came into control, her pesky little pixies have");
+    cin.ignore();
     printCentered("been traumatising the civilians.");
+    cin.ignore();
     printCentered("Be careful while going in there, we can't let our guard down!");
+    cin.ignore();
     printCentered("...");
+    cin.ignore();
     printCentered("squeak squeak");
+    cin.ignore();
     printCentered("Elara:oh no! I didn't think we'd actually run into these THINGS");
+    cin.ignore();
     printCentered("Stay on your guard!");
+    cin.ignore();
 
 
     printCentered("What will you do? (i)gnore or (a)ttack: ");
@@ -172,16 +182,27 @@ void pixiesEncounter(int& playerHealth, int& winRate) {
 
 void elvesEncounter(int& playerHealth, int& winRate) {
     printCentered("Elara: Phew!! that was close.");
+    cin.ignore();
     printCentered("Never for a second did i doubt you!");
+    cin.ignore();
     printCentered("You are the Chosen one afterall.");
+    cin.ignore();
     printCentered("Now we're gonna have to be a bit sneaky.");
+    cin.ignore();
     printCentered("There's a bridge coming up.");
+    cin.ignore();
     printCentered("guarded by Amren's elves.");
+    cin.ignore();
     printCentered("There's no way they'll let us by that easily.");
+    cin.ignore();
     printCentered("...");
+    cin.ignore();
     printCentered("You reach an abandoned bridge guarded by Elves (ii).");
+    cin.ignore();
     printCentered("You ready?");
+    cin.ignore();
     printCentered("Will you (s)neak or (f)ight: ");
+    cin.ignore();
 
     char decision;
     cin >> decision;
@@ -229,16 +250,23 @@ void elvesEncounter(int& playerHealth, int& winRate) {
 
 void bibblesEncounter(int& playerHealth, int& winRate) {
     printCentered("Elara: This is the worst!!!");
+    cin.ignore();
     printCentered("but atleast we're not dead yet, so that's a good thing.");
+    cin.ignore();
     printCentered("we're gonna be approaching a tunnel soon,");
+    cin.ignore();
     printCentered("I've heard its filled with Bibbles.");
+    cin.ignore();
     printCentered("I've never seen one before, ");
+    cin.ignore();
     printCentered("but i sure have heard some nasty things about them.");
+    cin.ignore();
     printCentered("we've got to stay sharp!!");
-    cout << endl;
-    cout << endl;
+    cin.ignore();
     printCentered("...");
+    cin.ignore();
     printCentered("*You enter a tunnel and are attacked by Bibbles* (iii).");
+    cin.ignore();
     printCentered("Do you (r)un or (c)hallenge: ");
 
     char decision = getDecision();
@@ -255,17 +283,23 @@ void bibblesEncounter(int& playerHealth, int& winRate) {
 
 void gollumsEncounter(int& playerHealth, int& winRate) {
     printCentered("Elara: we're almost there!!!");
+    cin.ignore();
     printCentered("Amren's Castle is just up ahead.");
+    cin.ignore();
     printCentered("It's heavily guarded by her Gollums.");
+    cin.ignore();
     printCentered("Those creatures are incredibly powerful.");
+    cin.ignore();
     printCentered("Don't fall into their traps.");
+    cin.ignore();
     printCentered("Focus on your end goal.");
-    cout << endl;
-    cout << endl;
+    cin.ignore();
     printCentered("...");
+    cin.ignore();
     printCentered("Elara: I CAN SEE THEMMM!!!!!");
-    cout << endl;
+    cin.ignore();
     printCentered("You face Gollums guarding Amren's castle.");
+    cin.ignore();
     printCentered("Gollum asks: 'Do you wish to fight me? (yes/no):' ");
 
     string response;
